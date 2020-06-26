@@ -52,3 +52,19 @@ function showSlides(n) {
   slides[slideIndex-1].style.display = "block";
   window.timer = window.setTimeout(plusSlides, window.slide_time, 1);
 }
+
+
+// Collapsible
+var coll = document.getElementsByClassName("collapsible");
+var i;
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+      this.classList.toggle("cactive");
+      var content = this.nextElementSibling;
+      if (content.style.display === "block") {
+            content.style.display = "none";
+          } else {
+                content.style.display = "block";
+              }
+    });
+}
