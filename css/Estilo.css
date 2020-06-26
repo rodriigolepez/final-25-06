@@ -1,0 +1,973 @@
+
+.banner1 {
+    width: 100%;
+    height: 170px;
+    border-radius: 5px;
+    padding-top: 0px;
+    margin-top: 11px;
+    margin-bottom: 7px;
+    animation: banner1 10s infinite;
+    animation-direction: normal;
+    object-position: center;
+}
+@keyframes banner1 {
+    0%, 33% {
+        background: url(../img/bgnls2001.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    34%, 66% {
+        background: url(../img/bgnls2002.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    67%, 100% {
+        background: url(../img/bgnls2003.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+}
+
+/*-----Tableros Instalaciones Automatismos-----*/
+
+* {box-sizing:border-box}
+
+/* Slideshow container */
+.slideshow-container {
+  position: relative;
+  margin: auto;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: #00FFFF;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+.imgbutton{
+  display: block;
+  text-align: center;
+  font-size: 17px;
+  height: 30px;
+  font-family: sans-serif;
+  background-color: #77C8FF;
+  border-radius: 5px;
+  margin-top: 15px;
+  margin-bottom: 10px;
+  box-shadow: 5px 3px;
+  border-color: #1D9EC4;
+}
+
+.imgbutton:checked, .active {
+  background-color:white;
+}
+
+.imgbutton:hover, .active {
+ cursor: pointer;
+}
+
+/* Calculadora */
+.popup {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.popup-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 650px;
+}
+
+/* The Close Button */
+.close {
+  top: 15px;
+  right: 35px;
+  float: right;
+  color: gray;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+
+
+
+/* BannerButtons */
+.banner-container {
+    position: relative;
+    width: 100%;
+}
+.banner-btn {
+  position: absolute;
+  width: 20px;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  background-color: #60E2FF;
+  padding: 5px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+/* Style the Image Used to Trigger the Modal */
+#myImg {
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#myImg:hover {opacity: 0.7;}
+
+/* The Modal (background) */
+.popupimg {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+
+/* Modal Content (Image) */
+.popupimg-content {
+  margin: auto;
+  display: block;
+  width: 100%;
+  max-width: 1250px;
+}
+
+/* Caption of Modal Image (Image Text) - Same Width as the Image */
+#caption {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+  text-align: center;
+  color: #ccc;
+  padding: 10px 0;
+  height: 150px;
+}
+
+/* Add Animation - Zoom in the Modal */
+.popupimg-content, #caption {
+  animation-name: zoom;
+  animation-duration: 0.6s;
+}
+
+@keyframes zoom {
+  from {transform:scale(0)}
+  to {transform:scale(1)}
+}
+
+/* The Close Button */
+.closeimg {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.close:hover,
+.closeimg:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px){
+  .popupimg-content {
+    width: 100%;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+body {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: #333;
+    font-size: 1.0rem;
+    line-height: 1.6rem;
+    margin: 0;
+}
+
+
+
+.header {
+    background: #586994;
+    color: white;
+    padding: 0px 0px 0px 0px;
+    left: 0;
+    top: 0;
+    right: 0;
+}
+
+.header a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.logo-nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.menu-icon {
+    display: none;
+    font-weight: 600;
+}
+
+
+.navigation ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-weight: 600;
+}
+
+.navigation ul li {
+    display: inline-block;
+}
+
+.navigation ul li a{
+    display: block;
+    padding: 0px 10px;
+    transition: all 0.5s linear;
+    border-radius: 10px;
+}
+
+.navigation ul li a:checked {
+    background: #1988C6;
+}
+
+.navigation-active {
+    background: #1988C6;
+    border-radius: 10px;
+}
+
+
+
+
+
+/*-----pagina de equipamento-----*/
+
+.construccion{
+    margin-left: 360px;
+    margin-top: 90px;
+    margin-bottom: 120px;
+}
+
+
+
+
+
+
+/*-----pagina de contacto-----*/
+
+
+#izquierda{
+    padding-top: 30px;
+    padding-left: 300px;
+    width: 700px;
+    height: auto; overflow: hidden;
+    border: 0px solid;
+    float: left;
+}
+.h1-contacto{
+    width: 500px;
+    height: 60px;
+    padding-top: 20px;
+    color: #848484;
+    text-align: left;
+    padding-left: 100px;
+
+}
+.texto-contacto{
+    color: #848484;
+    text-align: left;
+}
+.email-contacto{
+    color: #848484;
+    text-decoration: none;
+}
+
+.email-contacto:hover{
+    text-decoration: underline;
+}
+
+#derecha{
+    padding-top: 10x;
+    padding-right: 240px;
+    widows: 290px;
+    border: 0px solid;
+    height: auto; overflow: hidden;
+    float: right;  
+}
+
+input[type="text"],input[type="email"]{
+    border: 1px solid #ccc;
+    padding: 5px;
+    border-radius: 5px;
+    margin: 5px;
+}
+
+
+
+
+
+.textarea{
+    border: 1px solid #ccc;
+    padding: 0px;
+    border-radius: 5px;
+    margin: 5px;
+}
+
+
+
+.nombre-mensaje{
+    width: 100%;
+}
+
+
+
+
+.nombre-consulta{
+    width: 100%;
+    height: 100px;
+}
+
+
+
+.email-asunto{
+  width: 100%;  
+}
+
+
+
+input[type="submit"]{
+    padding: 5px;
+    background: #0489B1;
+    color: #fff;
+    border: 1px: solid #086A87;
+    border-radius: 5px;
+}
+
+#mapa{
+    padding-left: 200px;
+    padding-top: 50px;
+    padding-bottom: 20px;
+    width: 100%;
+    height: auto; overflow: hidden;  
+}
+
+.street-view{
+    margin-bottom: 0px;
+    float: right;
+    width: 550px;
+}
+}
+
+.mapabagnols{
+   padding-left: 15%;
+    
+    }
+
+
+
+
+
+
+
+
+/* distribuidora */
+
+
+
+.contenedor-sobre-nosotros{
+    max-height: 100%;
+    max-width: 1100px;
+    display: inline-block;
+    justify-content: space-evenly;
+    padding: 0px 0px 0px 0px; 
+}
+
+
+
+
+.distribuidorabaner {
+    width: 100%;
+    height: 300px;
+    margin-bottom: 0px;
+}
+
+
+.imagen-about-us{
+    position: relative;
+    background-color: white;
+    height: 350px;
+    width:388px;
+    margin-top: 0px;
+    float: left;
+    border-radius: 10px;
+    bottom: 60px;
+    
+}
+
+.imagen-about-us:hover{
+ transform: scale(1.05);
+}
+.imagen-about-us:hover{
+ transition-duration: 1s;
+}
+
+
+
+
+.imagen-about-us2{
+    position: relative;
+    background-color: white;
+    height: 350px;
+    width:388px;
+    margin-top: 0px;
+    float: right;
+    border-radius: 10px;
+    bottom: 60px;
+}
+
+
+
+.imagen-about-us2:hover{
+ transform: scale(1.05)
+}
+.imagen-about-us2:hover{
+ transition-duration: 1s;
+}
+
+
+
+
+.titulo2{
+    color: black;
+    margin-bottom: 15px;
+    margin-top: 10px;
+    padding-left: 0px;
+    margin-left: 80px;
+    padding-top: 0px;
+    cursor: pointer;
+}
+
+
+
+.titulo2:hover{
+ transform: scale(1.1);
+}
+.titulo2:hover{
+ transition-duration: 1s;
+}
+.titulo2:hover{
+ pointer-events: all;
+}
+
+
+
+
+.contenido-textos ul1 li{
+height: 25px;
+width: 180px;
+font-size: 13px;
+margin-top: 0px;
+padding-bottom: 20px;
+padding-left: 0px;
+margin-left: 90px;
+text-align: left;
+position: static;
+}
+
+.contenido-textos ul1 li:hover{
+    transform: scale(1.1);
+    
+}
+
+.contenido-textos ul1 li:hover{
+    transition: 1s;
+}
+
+
+
+.contenido-textos {
+    column-count: 3;
+    column-gap: 0px;
+    padding-right: 0px;
+    float: center;
+    width: 573px;
+    height: 300px;
+
+}
+
+.calculo22{
+    position: relative;
+    bottom: -4px;
+    left: -190px;
+    margin-left: 0px;
+    padding-top: 0px;
+    border-radius: 5px;
+    margin-left: 0px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    
+}
+.calculo22:hover{
+ transform: scale(0.9);
+}
+
+.calculo22:hover{
+ transition: 5s;
+}
+
+.titulodistribuidora{
+    width: 350px;
+    height: 45px;
+    margin-left: 500px;
+    
+}
+
+
+
+
+
+@media only screen and (max-width: 2000px) {
+ 
+  
+
+
+
+
+
+
+/*-----footer-----*/
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+footer{
+    width: 100%;
+    background: #202020;
+    color: whitesmoke; 
+    margin-top: 20px;
+    
+}
+
+.container-footer-all{
+    width: 100%;
+    max-width: 100%;
+    margin: auto;
+    padding: 10px 10px 0px 10px;
+}
+
+.container-body{
+    max-height: 150px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.colum1{
+    max-width: 550px;
+    
+}
+
+.colum1 h1{
+    padding-top: 10px;
+    font-size: 20px;
+}
+
+.colum1 p{
+    font-size: 15px;
+    color: white;
+    margin-top: 5px;
+}
+
+.colum2{;
+    max-width: 600px;
+    
+}
+
+.colum2 h1{
+    margin-top: 0px;
+    padding-top: 35px;
+    font-size: 15px;
+}
+
+.row{
+    margin-top: 10px;
+    text-decoration-color: white;
+    display: flex;
+    text-align: left;
+}
+
+.row img{
+    width: 15px;
+    height: 15px;
+}
+
+.row label{
+    margin-top: 10px;
+    margin-left: 20px;
+    color: #C7C7C7;
+}
+
+
+.sigueinsta2{
+    color: white;
+    text-decoration:underline;
+    margin-top: 10px;
+    margin-left: 10px;
+    display: flex;
+    text-align: left;
+    font-size: 14px;
+}
+    .sigueinsta4{
+    text-decoration: none;
+    text-decoration:underline;
+    margin-top: 0px;
+    margin-left: 2px;
+    display: flex;
+    text-align: left;
+    font-size: 14px;
+}
+
+.sigueyoutube{
+    color: #C7C7C7;
+    margin-top: 0px;
+    margin-left: 10px;
+    display: flex;
+    text-align: left;
+    text-decoration: none;
+    
+}
+.sigueyoutube2{
+    color: red;
+    text-decoration:underline;
+    
+}
+
+
+
+
+.colum3{
+    max-width: 400px;
+}
+
+.colum3 h1{
+    padding-top: 10px;
+    font-size: 20px;
+}
+
+
+.row2{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    font-size: 14px;
+}
+
+.row2 img{
+    margin-top: 10px;
+    width: 25px;
+    height: 25px;
+}
+
+.row2 label{
+    margin-top: 0px;
+    margin-left: 10px;
+    max-width: 140px;
+}
+
+
+.colum2{
+    max-width: 400px;
+}
+
+.colum2 h1{
+    padding-left: 190px;
+    padding-top: 10px;
+    font-size: 20px;
+}
+
+.row3{
+    padding-left: 190px;
+    margin-top: 0px;
+    margin-bottom: px;
+    display: flex;
+}
+
+.row3 img{
+    margin-top: 10px;
+    width: 26px;
+    height: 26px;
+}
+    
+.row4{
+    padding-left: 190px;
+    margin-top: 0px;
+    margin-bottom: px;
+    display: flex;
+}
+
+.row4 img{
+    margin-top: 10px;
+    width: 26px;
+    height: 26px;
+    text-decoration: none;
+}      
+    
+    
+
+    
+
+
+.row2 label{
+    margin-top: 0px;
+    margin-left: 10px;
+    max-width: 160px;
+}
+
+.sigueinsta1{
+    padding-top: 0px;
+    padding-left: 5px;
+    text-decoration: underline;
+}
+
+.sigueinsta2{
+    padding-top: 0px;
+    padding-left: 0px;
+    text-decoration: underline;
+}
+.sigueinsta3{
+    padding-top: 10px;
+    padding-left: 0px;
+    text-decoration: underline;
+}
+.sigueinsta4{
+    padding-top: 5px;
+    padding-left: 15px;
+    text-decoration: underline;
+    color: white;
+}
+
+
+
+
+.container-footer{
+    width: 100%;  
+    background: #101010;
+}
+
+.footer{
+    max-width: 100%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;  
+    padding: 0px;
+}
+
+.copyright{
+    color: #C7C7C7;
+}
+
+.copyright a{
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    
+}
+
+.information a{
+    text-decoration: none;
+    color: #C7C7C7;
+    
+}
+
+
+
+
+
+
+
+
+
+
+@media only screen and (max-width: 767px) {
+    
+    .menu-icon {
+        display: block;
+        cursor: pointer;
+        padding: 0px 10px;
+    } 
+    
+    .navigation ul{
+        display: none;
+    }
+    
+     .navigation ul.show {
+        display: block;
+    }
+    
+    
+.navigation{
+ width: 100%; 
+ margin-top: 1rem;
+}
+    
+.navigation ul li {
+    display: block;
+}
+
+.navigation ul li a{
+    display: block;
+    padding: 10px 10px;
+    transition: all 0.5s linear;
+    border-radius: 10px;
+}
+
+.navigation ul li a:hover {
+    background: #1988C6;
+}
+
+    
+    
+
+
+    
+
+    
+    
+    
+
+
+    
+
+
+
+
+

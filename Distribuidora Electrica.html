@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <title>Bagnols</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/Estilo.css" rel="stylesheet">
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+    </head>
+    <body>
+    <header class="header">
+      <div class="container logo-nav-container">
+            <a href="#">
+                <img src="img/logoiniciobagnols1.png" alt="">
+            </a>
+            <span class="menu-icon">Ver Menú</span>
+            <nav class="navigation">
+               <ul>
+                    <li><a href="index.html">Inicio</a></li> 
+                    <li><a href="Tablero%20Instalaciones%20Automatismos.html">Tableros Instalaciones Automatismos</a></li> 
+                    <li class="navigation-active"><a href="Distribuidora%20Electrica.html">Distribuidora Eléctrica</a></li>
+                    <li><a href="Servicios.html">Equipamiento</a></li>
+                    <li><a href="Contacto.html">Contacto</a></li> 
+               </ul>
+            </nav>
+      </div>
+    </header>
+
+    <div class="tableroppal">
+               <div class="banner-container">
+                <img src="img/distribuidora4.jpg" width="100%" height="300px" alt="" class="distribuidorabaner">
+                <input id="tablero1" type="image" style="top: 43%; left: 38%;" class="banner-btn" src="img/lupa.png" alt="Tablero 1">
+                <input id="tablero2" type="image" style="top: 40%; left: 42%;" class="banner-btn" src="img/lupa.png" alt="Tablero 2">
+                <input id="tablero3" type="image" style="top: 35%; left: 48%;" class="banner-btn" src="img/lupa.png" alt="Tablero 3">
+                <input id="tablero4" type="image" style="top: 25%; left: 60%;" class="banner-btn" src="img/lupa.png" alt="Tablero 4">
+               </div>
+				<div id="popupimage" class="popupimg">
+					<span class="closeimg">&times;</span>
+					<img class="popupimg-content" id="img">
+					<div id="caption"></div>
+				</div>
+                
+                <div id="popupcalc" class="popup">
+                <div class="popup-content">
+                        <a style="font-weight: bold;">Calculadora</a>
+                        <span class="close">&times;</span>
+                        <div align="center" id="calcform">
+                        <center>
+                        <table border="0" width="600" height="262" cellspacing="0" cellpadding="0">
+                        <tr>
+                            <td width="100%" height="256">
+                            <div align="center">
+                                <center>
+                                <table border="1" width="492" height="205" bordercolor="#3399FF" cellspacing="0" cellpadding="0">
+                                <tr>
+                                    <td width="303" height="41" bgcolor="#FFFFFF" bordercolorlight="#3399FF"><font face="Verdana" size="2">&nbsp;Tensión
+                                    (Volts)</font></td>
+                                    <td width="183" height="41" bgcolor="#FFFFFF" bordercolorlight="#3399FF" align="center"><input type="text" id="tension" size="20" style="border-style: solid; border-color: #800000"></td>
+                                </tr>
+                                <tr>
+                                    <td width="303" height="42" bgcolor="#FFFFFF" bordercolorlight="#3399FF">
+                                    <p style="margin-top: 0; margin-bottom: 0"><font face="Verdana" size="2">&nbsp;Corriente
+                                    (Amperes)</font></p>
+                                    </td>
+                                    <td width="183" height="42" bgcolor="#FFFFFF" bordercolorlight="#3399FF" align="center"><input type="text" id="corriente" size="20" style="border-style: solid; border-color: #800000"></td>
+                                </tr>
+                                <tr>
+                                    <td width="303" height="42" bgcolor="#FFFFFF" bordercolorlight="#3399FF"><font face="Verdana" size="2">&nbsp;Longitud
+                                    (Km)</font></td>
+                                    <td width="183" height="42" bgcolor="#FFFFFF" bordercolorlight="#3399FF" align="center"><input type="text" id="longitud" size="20" style="border-style: solid; border-color: #800000"></td>
+                                </tr>
+                                <tr>
+                                    <td width="303" height="19" align="center" bgcolor="#FFFFFF" bordercolorlight="#3399FF"><input type="radio" value="1" checked name="R1" id="monofasico">
+                                    <font face="Verdana" size="2">Monofásico</font></td>
+                                    <td width="183" height="19" align="center" bgcolor="#FFFFFF" bordercolorlight="#3399FF"><input type="radio" value="2" name="R1" id="trifasico">
+                                    <font face="Verdana" size="2">Trifásico</font></td>
+                                </tr>
+                                <tr>
+                                    <td width="488" colspan="2" height="49" bgcolor="#FFFFFF" bordercolorlight="#3399FF" bordercolor="#3399FF" bordercolordark="#3399FF">
+                                    <p align="center"><input type="button" value="Calcular" id="calculate"></td>
+                                </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        </table>
+                        </center>
+                        </div>
+                            <div align="center" id="calcresult" style="display: none;">
+                            <center>
+                            <table border="1" width="80%" height="205" bordercolor="#3399FF" cellspacing="0" cellpadding="0">
+                                <tbody id="calcresulttable">
+                                <tr>
+                                <td width="12%" align="center" bgcolor="#FFFFFF" bordercolorlight="#3399FF"><font face="Verdana" color="#FF0000" size="1"><b>Formación Cable</b></font></td>
+                                <td width="12%" align="center" bgcolor="#FFFFFF" bordercolorlight="#3399FF"><font face="Verdana" color="#FF0000" size="1"><b>Tensión Ingresada (V)</b></font></td>
+                                <td width="12%" align="center" bgcolor="#FFFFFF" bordercolorlight="#3399FF"><font face="Verdana" color="#FF0000" size="1"><b>Corriente Ingresada (A)</b></font></td>
+                                <td width="12%" align="center" bgcolor="#FFFFFF" bordercolorlight="#3399FF"><font face="Verdana" color="#FF0000" size="1"><b>Longitud del Cable (Km)</b></font></td>
+                                <td width="13%" align="center" bgcolor="#FFFFFF" bordercolorlight="#3399FF"><font face="Verdana" color="#FF0000" size="1"><b>Diámetro exterior (mm)</b></font></td>
+                                <td width="13%" align="center" bgcolor="#FFFFFF" bordercolorlight="#3399FF"><font face="Verdana" color="#FF0000" size="1"><b>Corriente Admisible (A)</b></font></td>
+                                <td width="13%" align="center" bgcolor="#FFFFFF" bordercolorlight="#3399FF"><font face="Verdana" color="#FF0000" size="1"><b>Caida de Tensión (V)</b></font></td>
+                                <td width="13%" align="center" bgcolor="#FFFFFF" bordercolorlight="#3399FF"><font face="Verdana" color="#FF0000" size="1"><b>Caida de Tensión (%)</b></font></td>
+                                </tr>
+                                </tbody>
+                                </table>
+                                </center>
+                                <p align="center"><font face="Verdana" size="2"><span style="background-color: #3399FF"> Cables IMSA Etix de aluminio expuestos al sol con temp. ambiente de 40ºC y 90ºC en el conductor. </span></font></p>
+                                <p align="center"><input type="button" value="Realizar otro calculo" id="returntocalc"></p>
+                            </div>
+                </div>
+                </div>
+                
+            </div>
+            <div class="titulo2"> 
+               <img src="img/TituloDISTRIBUIDORA.png" class="titulodistribuidora">
+               </div>
+            <img src="img/distribuidorabajo111.png" alt="" class="imagen-about-us">
+           <img src="img/distribuidorabajo222.png" alt="" class="imagen-about-us2">
+           
+            <div class="contenedor-sobre-nosotros">
+             
+            
+                 
+              
+              
+               
+               
+               
+                
+                <div class="contenido-textos">
+    
+                     <ul1>
+                         <li>Aisladores</li>
+                         <li>Amperimetro</li>
+                         <li>Accesorio Preensamblado</li>
+                         <li>Aparejos</li>
+                         <li>Ataduras</li>
+                         <li>Balastos</li>
+                         <li>Cables de acero</li>
+                         <li>Cajas y Gabinetes</li>
+                         <li>Caños</li>
+                         <li>Capacitores</li>
+                         <li>Conductores</li>
+                         <li>Conectores</li>
+                         <li>Contactores</li>
+                         <li>Crucetas y postes</li>
+                         <li>Descargadores</li>
+                         <li>Elementos de Seguridad</li>
+                         <li>Empalmes y bot.</li>
+                         <li>Escaleras</li>
+                         <li>Fotocelulas</li>
+                         <li>Fusibles media y baja</li>
+                         <li>Grampas</li>
+                         <li>Herramientas</li>
+                         <li>Ignitores</li>
+                         <li>Instrumentos mediciòn</li>
+                         <li>Jabalinas</li>
+                         <li>Transformadores</li>
+                         <li>Terminales</li>
+                         <li>Lámparas</li>
+                         <li>Luminarias</li>
+                         <li>Materiales Normalizados</li>
+                         <li>Medidores</li>
+                         <li>Morsetería media y baja</li>
+                         
+                     </ul1>
+            
+            
+                     
+                </div>
+
+            </div>
+              <a id="opencalc" class="calculo22" style="cursor: pointer;">
+                    <img src="calculadora.gif" class="calculo22">
+                </a>
+              
+              <script src="calculadora.js"></script>
+               
+            
+              
+            
+            
+    <footer>
+       
+        <div class="container-footer-all">
+         
+             <div class="container-body">
+ 
+                 <div class="colum1">
+                    
+ 
+                     <p>Bagnols S.A., desde hace 43 años (Octubre 1977), trabaja para optimizar la calidad de sus productos e instalaciones incorporando nuevas tecnologías, certificaciones y equipamiento para dichos procesos.
+                     La calidad y la seguridad de la energía eléctrica son esenciales para garantizar la continuidad de servicio.</p>
+ 
+                 </div>
+ 
+                 <div class="colum2">
+ 
+    
+                     <div class="row3">
+                         <img src="img/instagram.png">
+                         <div class="sigueinsta1">
+                         <a class="sigueinsta2"
+                    href="https://www.instagram.com/bagnols_s.a/"> Seguinos en Instagram</a>
+                         </div>
+                     </div>
+ 
+                     <div class="row3">
+                         <img src="img/youtube.png">
+                         <div class="sigueinsta3">
+                         <a class="sigueinsta4" href="https://www.youtube.com/channel/UCwbzQ9todGvCn3iNVV2o_Ig"> Seguinos en Youtube</a>
+                         </div>
+                     </div>
+                       
+                       <div class="row4">
+                         <img src="img/whatsapp.png">
+                         <div class="sigueinsta3">
+                         <a class="sigueinsta4"> +54 911 4049-7355</a>
+                         </div>
+                     </div>
+        
+        
+        
+ 
+ 
+                 </div>
+ 
+                 <div class="colum3">
+ 
+ 
+                     <div class="row2">
+                         <img src="img/house.png" class="direccionalv">
+                         <label>Dirección: Alvar Nuñez 455/57 | CABA</label>
+                     </div>
+ 
+                     <div class="row2">
+                         <img src="img/smartphone.png" class="telefonobag">
+                         <label>Tel: 4301-9569 / 4302-0545 / 7509-7332</label>
+                     </div>
+
+ 
+                 </div>
+ 
+             </div>
+         
+         </div>
+         
+         <div class="container-footer">
+                <div class="footer">
+                     <div class="copyright">
+                         <a href=""></a>
+                     </div>
+ 
+                     <div class="information">
+                         <a href="">© 2020 Todos los Derechos Reservados </a> | <a href="">Bagnols S.A.</a>
+                     </div>
+                 </div>
+ 
+             </div>
+         
+     </footer>
+
+  
+      <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+       <script src="scripts.js"></script>
+        
+ </body>
+</html>
