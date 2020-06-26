@@ -281,6 +281,18 @@
 
 
 
+.row-custom {
+  display: flex;
+  flex-flow: row;
+}
+
+.col {
+  width: 30%;
+}
+.col-center {
+  width: 40%;
+}
+
 
 
 
@@ -501,9 +513,7 @@ input[type="submit"]{
 
 
 .contenedor-sobre-nosotros{
-    max-height: 100%;
-    max-width: 1100px;
-    display: inline-block;
+    display: block;
     justify-content: space-evenly;
     padding: 0px 0px 0px 0px; 
 }
@@ -519,15 +529,8 @@ input[type="submit"]{
 
 
 .imagen-about-us{
-    position: relative;
-    background-color: white;
-    height: 350px;
-    width:388px;
-    margin-top: 0px;
     float: left;
     border-radius: 10px;
-    bottom: 60px;
-    
 }
 
 .imagen-about-us:hover{
@@ -541,14 +544,8 @@ input[type="submit"]{
 
 
 .imagen-about-us2{
-    position: relative;
-    background-color: white;
-    height: 350px;
-    width:388px;
-    margin-top: 0px;
     float: right;
     border-radius: 10px;
-    bottom: 60px;
 }
 
 
@@ -564,13 +561,8 @@ input[type="submit"]{
 
 
 .titulo2{
-    color: black;
-    margin-bottom: 15px;
-    margin-top: 10px;
-    padding-left: 0px;
-    margin-left: 80px;
-    padding-top: 0px;
     cursor: pointer;
+    text-align: center;
 }
 
 
@@ -595,7 +587,7 @@ font-size: 13px;
 margin-top: 0px;
 padding-bottom: 20px;
 padding-left: 0px;
-margin-left: 90px;
+margin-left: 0px;
 text-align: left;
 position: static;
 }
@@ -616,20 +608,16 @@ position: static;
     column-gap: 0px;
     padding-right: 0px;
     float: center;
-    width: 573px;
     height: 300px;
 
 }
 
 .calculo22{
-    position: relative;
-    bottom: -4px;
-    left: -190px;
     margin-left: 0px;
     padding-top: 0px;
     border-radius: 5px;
     margin-left: 0px;
-    margin-top: 0px;
+    margin-top: 10px;
     margin-bottom: 0px;
     
 }
@@ -644,8 +632,6 @@ position: static;
 .titulodistribuidora{
     width: 350px;
     height: 45px;
-    margin-left: 500px;
-    
 }
 
 
@@ -953,9 +939,6 @@ footer{
 .navigation ul li a:hover {
     background: #1988C6;
 }
-
-    
-    
 
 
     
