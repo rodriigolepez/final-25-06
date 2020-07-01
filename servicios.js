@@ -44,11 +44,51 @@ function showSlides(n) {
       slides[i].style.display = "none";
   }
   if(window.current_group != ""){
-    slides = [...slides]
+    slides = [...slides];
     slides = slides.filter(function(value, index, arr){ return value.getAttribute("group") == window.current_group;});
+  }else{
+    var active_col = document.getElementsByClassName("cactive");
+    if(active_col.length > 0){
+      var buttons = [...active_col[0].nextElementSibling.children]
+      var groups = [];
+      for (i = 0; i < buttons.length; i++) {
+        groups.push(buttons[i].getAttribute("group"));
+      }
+      slides = [...slides];
+      slides = slides.filter(function(value, index, arr){ return groups.includes(value.getAttribute("group"));});
+    }
   }
   if (n > slides.length) {slideIndex = 1}
   if (n < 1) {slideIndex = slides.length}
   slides[slideIndex-1].style.display = "block";
   window.timer = window.setTimeout(plusSlides, window.slide_time, 1);
+}
+
+
+// Collapsible
+var coll = document.getElementsByClassName("collapsible");
+var i;
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+      var button = document.getElementsByClassName("active");
+      if(button.length > 0) {
+        goToGroup(button[0]);
+      }
+      if(!this.classList.contains("cactive")){
+        var cols = document.getElementsByClassName("collapsible");
+        for (i = 0; i < cols.length; i++) {
+          cols[i].className = cols[i].className.replace(" cactive", "");
+          var content = cols[i].nextElementSibling;
+          content.style.display = "none";
+        }
+      }
+      this.classList.toggle("cactive");
+      content = this.nextElementSibling;
+      if (content.style.display === "block") {
+        content.style.display = "none";
+      } else {
+        content.style.display = "block";
+      }
+      currentSlide(1);
+    });
 }
