@@ -7,12 +7,7 @@ function count(){
     onUpdate: function () {
       var number = Math.ceil(counter.var);
       $('.counter').html(("000" + number).slice(-4));
-      if(number === counter.var){ count.kill(); }
     },
-    onComplete: function(){
-      count();
-    },    
-    ease:Circ.easeOut
   });
 }
 count();
