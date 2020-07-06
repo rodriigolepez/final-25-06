@@ -6,7 +6,12 @@ var slideIndex = 1;
 showSlides(slideIndex);
 
 // Next/previous controls
-function plusSlides(n) {
+function plusSlides(n, auto = 0) {
+  var pause = document.getElementById("pause");
+  if(pause.classList.contains("active") && auto){
+    window.timer = window.setTimeout(plusSlides, window.slide_time, 1, 1);
+    return;
+  }
   showSlides(slideIndex += n);
 }
 
@@ -33,7 +38,7 @@ function goToGroup(self){
 }
 
 // Start Timer
-window.timer = window.setTimeout(plusSlides, window.slide_time, 1);
+window.timer = window.setTimeout(plusSlides, window.slide_time, 1, 1);
 
 // Show Slides Function
 function showSlides(n) {
@@ -61,7 +66,7 @@ function showSlides(n) {
   if (n > slides.length) {slideIndex = 1}
   if (n < 1) {slideIndex = slides.length}
   slides[slideIndex-1].style.display = "block";
-  window.timer = window.setTimeout(plusSlides, window.slide_time, 1);
+  window.timer = window.setTimeout(plusSlides, window.slide_time, 1, 1);
 }
 
 

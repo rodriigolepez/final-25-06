@@ -71,6 +71,20 @@
   background-color: rgba(0,0,0,0.8);
 }
 
+.pause {
+  position: absolute;
+  width: 25px;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  background-color: #77C8FF;
+  padding: 5px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  right: 0;
+  top: 50px;
+}
+
 /* Caption text */
 .text {
   color: #f2f2f2;
