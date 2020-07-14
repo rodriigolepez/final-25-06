@@ -22,6 +22,10 @@ function currentSlide(n) {
 
 function goToGroup(self){
   window.clearInterval(window.timer);
+  var pause = document.getElementById("pause");
+  if(pause.classList.contains("active")){
+    pause.click();
+  }
   var group = self.getAttribute("group");
   if(group == window.current_group){
     self.className = self.className.replace(" active", "");

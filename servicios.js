@@ -22,6 +22,10 @@ function currentSlide(n) {
 
 function goToGroup(self){
   window.clearInterval(window.timer);
+  var pause = document.getElementById("pause");
+  if(pause.classList.contains("active")){
+    pause.click();
+  }
   var group = self.getAttribute("group");
   if(group == window.current_group){
     self.className = self.className.replace(" active", "");
@@ -75,6 +79,10 @@ var coll = document.getElementsByClassName("collapsible");
 var i;
 for (i = 0; i < coll.length; i++) {
   coll[i].addEventListener("click", function() {
+      var pause = document.getElementById("pause");
+      if(pause.classList.contains("active")){
+        pause.click();
+      }
       var button = document.getElementsByClassName("active");
       if(button.length > 0) {
         goToGroup(button[0]);
