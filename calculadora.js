@@ -153,6 +153,7 @@ tablero1.onclick = function(){
   popupimg.style.display = "block";
   image.src = "img/MUESTRARIO-DE-MN-1.JPG";
   captionText.innerHTML = this.alt;
+//  popupimg.classList.add("customclass")
 }
 tablero2.onclick = function(){
   popupimg.style.display = "block";
@@ -176,4 +177,5 @@ var span = document.getElementsByClassName("closeimg")[0];
 // When the user clicks on <span> (x), close the modal
 span.onclick = function() {
   popupimg.style.display = "none";
+  popupimg.classList = "popupimg"
 }
